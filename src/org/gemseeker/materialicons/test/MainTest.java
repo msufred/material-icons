@@ -1,11 +1,15 @@
 package org.gemseeker.materialicons.test;
 
+import com.sun.org.apache.bcel.internal.generic.Select;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.FilteredList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.Side;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
@@ -16,85 +20,178 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import org.gemseeker.materialicons.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MainTest extends Application {
+
+    private static final double SIZE = 24;
+    private static final ArrayList<String> categories = new ArrayList<>(Arrays.asList(
+            "UI Actions"
+    ));
+
+    // UI Actions Icons
+    private final FilteredList<IconView> uiActions = new FilteredList<>(FXCollections.observableArrayList(
+            new IconView("Search", new SearchIcon(SIZE), "search-icon"),
+            new IconView("Search Off", new SearchOffIcon(SIZE), "search-off-icon"),
+            new IconView("Saved Search", new SeavedSearchIcon(SIZE), "saved-search-icon"),
+            new IconView("Zoom In", new ZoomInIcon(SIZE), "zoom-in-icon"),
+            new IconView("Zoom Out", new ZoomOutIcon(SIZE), "zoom-out-icon"),
+            new IconView("Home", new HomeIcon(SIZE), "home-icon"),
+            new IconView("Menu", new MenuIcon(SIZE), "menu-icon"),
+            new IconView("Menu Open", new MenuOpenIcon(SIZE), "menu-open-icon"),
+            new IconView("Clear All", new ClearAllIcon(SIZE), "clear-all-icon"),
+            new IconView("Close", new CloseIcon(SIZE), "close-icon"),
+            new IconView("Settings", new SettingsIcon(SIZE), "settings-icon"),
+            new IconView("Settings Application", new SettingsApplicationIcon(SIZE), "settings-application-icon"),
+            new IconView("Check", new CheckIcon(SIZE), "check-icon"),
+            new IconView("Expand More", new ExpandMoreIcon(SIZE), "expand-more-icon"),
+            new IconView("Expand Less", new ExpandLessIcon(SIZE), "expand-less-icon"),
+            new IconView("Expand Circle Down", new ExpandCircleDown(SIZE), "expand-circle-down-icon"),
+            new IconView("Check Circle", new CheckCircleIcon(SIZE), "check-circle-icon"),
+            new IconView("Favorite", new FavoriteIcon(SIZE), "favorite-icon"),
+            new IconView("Heart Plus", new HeartPlusIcon(SIZE), "heart-plus-icon"),
+            new IconView("Add", new AddIcon(SIZE), "add-icon"),
+            new IconView("Add Box", new AddBoxIcon(SIZE), "add-box-icon"),
+            new IconView("Delete", new DeleteIcon(SIZE), "delete-icon"),
+            new IconView("Delete Forever", new DeleteForeverIcon(SIZE), "delete-forever-icon"),
+            new IconView("Delete Sweep", new DeleteSweepIcon(SIZE), "delete-sweep-icon"),
+            new IconView("Arrow Back", new ArrowBackIcon(SIZE), "arrow-back-icon"),
+            new IconView("Arrow Forward", new ArrowForwardIcon(SIZE), "arrow-forward-icon"),
+            new IconView("Arrow Up", new ArrowUpIcon(SIZE), "arrow-up-icon"),
+            new IconView("Arrow Down", new ArrowDownIcon(SIZE), "arrow-down-icon"),
+            new IconView("Star", new StarIcon(SIZE), "star-icon"),
+            new IconView("Star Half", new StarHalfIcon(SIZE), "star-half-icon"),
+            new IconView("Chevron Left", new ChevronLeftIcon(SIZE), "chevron-left-icon"),
+            new IconView("Chevron Right", new ChevronRightIcon(SIZE), "chevron-right-icon"),
+            new IconView("Logout", new LogoutIcon(SIZE), "logout-icon"),
+            new IconView("Login", new LoginIcon(SIZE), "login-icon"),
+            new IconView("Publish", new PublishIcon(SIZE), "publish-icon"),
+            new IconView("Arrow Back IOS", new ArrowBackIosIcon(SIZE), "arrow-back-ios-icon"),
+            new IconView("Arrow Forward IOS", new ArrowForwardIosIcon(SIZE), "arrow-forward-ios-icon"),
+            new IconView("Add Circle", new AddCircleIcon(SIZE), "add-circle-icon"),
+            new IconView("Cancel", new CancelIcon(SIZE), "cancel-icon"),
+            new IconView("Arrow Drop Down", new ArrowDropDownIcon(SIZE), "arrow-drop-down-icon"),
+            new IconView("Arrow Drop Up", new ArrowDropUpIcon(SIZE), "arrow-drop-up-icon"),
+            new IconView("Arrow Right", new ArrowRightIcon(SIZE), "arrow-right-icon"),
+            new IconView("Arrow Left", new ArrowLeftIcon(SIZE), "arrow-left-icon"),
+            new IconView("Arrow Drop Down Circle", new ArrowDropDownCircleIcon(SIZE), "arrow-drop-down-circle-icon"),
+            new IconView("Arrow Right Alt", new ArrowRightAltIcon(SIZE), "arrow-right-alt-icon"),
+            new IconView("More Vert", new MoreVertIcon(SIZE), "more-vert-icon"),
+            new IconView("More Horiz", new MoreHorizIcon(SIZE), "more-horiz-icon"),
+            new IconView("Check Box", new CheckBoxIcon(SIZE), "check-box-icon"),
+            new IconView("Indeterminate Check Box", new IndeterminateCheckBoxIcon(SIZE), "indeterminate-check-box-icon"),
+            new IconView("Check Box Outline Blank", new CheckBoxOutlineBlankIcon(SIZE), "check-box-outline-blank-icon"),
+            new IconView("Select Check Box", new SelectCheckBoxIcon(SIZE), "select-check-box-icon"),
+            new IconView("Toggle On", new ToggleOnIcon(SIZE), "toggle-on-icon"),
+            new IconView("Toggle Off", new ToggleOffIcon(SIZE), "toggle-off-icon"),
+            new IconView("Open In New", new OpenInNewIcon(SIZE), "open-in-new-icon"),
+            new IconView("Open In Full", new OpenInFullIcon(SIZE), "open-in-full-icon"),
+            new IconView("Refresh", new RefreshIcon(SIZE), "refresh-icon"),
+            new IconView("Radio Button Unchecked", new RadioButtonUncheckedIcon(SIZE), "radio-button-unchecked-icon"),
+            new IconView("Radio Button Checked", new RadioButtonCheckedIcon(SIZE), "radio-button-checked-icon"),
+            new IconView("Apps", new AppsIcon(SIZE), "apps-icon"),
+            new IconView("App Registration", new AppRegistrationIcon(SIZE), "app-registration-icon"),
+            new IconView("Download", new DownloadIcon(SIZE), "download-icon"),
+            new IconView("Download For Offline", new DownloadForOfflineIcon(SIZE), "download-for-offline"),
+            new IconView("Downloading", new DownloadingIcon(SIZE), "downloading-icon"),
+            new IconView("Download Done", new DownloadDoneIcon(SIZE), "download-done-icon"),
+            new IconView("Remove", new RemoveIcon(SIZE), "remove-icon"),
+            new IconView("Bolt", new BoltIcon(SIZE), "bolt-icon"),
+            new IconView("Filter List", new FilterListIcon(SIZE), "filter-list-icon"),
+            new IconView("Sort", new SortIcon(SIZE), "sort-icon"),
+            new IconView("Auto Renew", new AutoRenewIcon(SIZE), "auto-renew-icon"),
+            new IconView("Cached", new CachedIcon(SIZE), "cached-icon"),
+            new IconView("Key", new KeyIcon(SIZE), "key-icon"),
+            new IconView("Sync", new SyncIcon(SIZE), "sync-icon"),
+            new IconView("Sync Problem", new SyncProblemIcon(SIZE), "sync-problem-icon"),
+            new IconView("Block", new BlockIcon(SIZE), "block-icon"),
+            new IconView("Restart Alt", new RestartAltIcon(SIZE), "restart-alt-icon"),
+            new IconView("Shopping Cart Checkout", new ShoppingCartCheckoutIcon(SIZE), "shopping-cart-checkout-icon"),
+            new IconView("Backspace", new BackspaceIcon(SIZE), "backspace-icon"),
+            new IconView("Arrow Circle Right", new ArrowCircleRightIcon(SIZE), "arrow-circle-right-icon"),
+            new IconView("Arrow Circle Left", new ArrowCircleLeftIcon(SIZE), "arrow-circle-left-icon"),
+            new IconView("Arrow Circle Up", new ArrowCircleUpIcon(SIZE), "arrow-circle-up-icon"),
+            new IconView("Arrow Circle Down", new ArrowCircleDownIcon(SIZE), "arrow-circle-down-icon"),
+            new IconView("Undo", new UndoIcon(SIZE), "undo-icon"),
+            new IconView("Redo", new RedoIcon(SIZE), "redo-icon"),
+            new IconView("Done All", new DoneAllIcon(SIZE), "done-all-icon"),
+            new IconView("Done Outline", new DoneOutlineIcon(SIZE), "done-outline-icon"),
+            new IconView("Do Not Disturb", new DoNotDisturbIcon(SIZE), "do-not-disturb-icon"),
+            new IconView("Double Arrow", new DoubleArrowIcon(SIZE), "double-arrow-icon"),
+            new IconView("Manage Search", new ManageSearchIcon(SIZE), "manage-search-icon"),
+            new IconView("Sync Alt", new SyncAltIcon(SIZE), "sync-alt-icon"),
+            new IconView("Drag Indicator", new DragIndicatorIcon(SIZE), "drag-indicator-icon"),
+            new IconView("Fullscreen", new FullscreenIcon(SIZE), "fullscreen-icon"),
+            new IconView("Fullscreen Exit", new FullscreenExitIcon(SIZE), "fullscreen-exit-icon"),
+            new IconView("Close Fullscreen", new CloseFullscreenIcon(SIZE), "close-fullscreen-icon"),
+            new IconView("Keyboard Double Arrow Right", new KeyboardDoubleArrowRightIcon(SIZE), "keyboard-double-arrow-right-icon"),
+            new IconView("Keyboard Double Arrow Left", new KeyboardDoubleArrowLeftIcon(SIZE), "keyboard-double-arrow-left-icon"),
+            new IconView("Keyboard Double Arrow Down", new KeyboardDoubleArrowDownIcon(SIZE), "keyboard-double-arrow-down-icon"),
+            new IconView("Keyboard Double Arrow Up", new KeyboardDoubleArrowUpIcon(SIZE), "keyboard-double-arrow-up"),
+            new IconView("Settings Accessibility", new SettingsAccessibilityIcon(SIZE), "settings-accessibility-icon"),
+            new IconView("Ios Share", new IosShareIcon(SIZE), "ios-share-icon"),
+            new IconView("Reply", new ReplyIcon(SIZE), "reply-icon"),
+            new IconView("Forward", new ForwardIcon(SIZE), "forward-icon"),
+            new IconView("Exit To App", new ExitToAppIcon(SIZE), "exit-to-app-icon"),
+            new IconView("Unfold More", new UnfoldMoreIcon(SIZE), "unfold-more-icon"),
+            new IconView("Unfold Less", new UnfoldLessIcon(SIZE), "unfold-less-icon"),
+            new IconView("Library Add", new LibraryAddIcon(SIZE), "library-add-icon"),
+            new IconView("Terminal", new TerminalIcon(SIZE), "terminal-icon"),
+            new IconView("Change Circle", new ChangeCircleIcon(SIZE), "change-circle-icon"),
+            new IconView("Disabled By Default", new DisabledByDefaultIcon(SIZE), "disabled-by-default-icon"),
+            new IconView("Swap Horiz", new SwapHorizIcon(SIZE), "swap-horiz-icon"),
+            new IconView("Swap Vert", new SwapVertIcon(SIZE), "swap-vert-icon"),
+            new IconView("Compare Arrows", new CompareArrowsIcon(SIZE), "compare-arrows-icon"),
+            new IconView("File Open", new FileOpenIcon(SIZE), "file-open-icon"),
+            new IconView("Minimize", new MinimizeIcon(SIZE), "minimize-icon"),
+            new IconView("Open With", new OpenWithIcon(SIZE), "open-with-icon"),
+            new IconView("Dataset", new DatasetIcon(SIZE), "dataset-icon"),
+            new IconView("Add Task", new AddTaskIcon(SIZE), "add-task-icon"),
+            new IconView("Start", new StartIcon(SIZE), "start-icon"),
+            new IconView("Keyboard Voice", new KeyboardVoiceIcon(SIZE), "keyboard-voice-icon"),
+            new IconView("Create New Folder", new CreateNewFolderIcon(SIZE), "create-new-folder-icon"),
+            new IconView("Html", new HtmlIcon(SIZE), "html-icon"),
+            new IconView("One Two Three", new OneTwoThreeIcon(SIZE), "one-two-three-icon"),
+            new IconView("Javascript", new JavascriptIcon(SIZE), "javascript-icon"),
+            new IconView("Token", new TokenIcon(SIZE), "token-icon"),
+            new IconView("Switch Access Shortcut", new SwitchAccessShortcutIcon(SIZE), "switch-access-shortcut-icon"),
+            new IconView("Switch Access Shortcut Add", new SwitchAccessShortcutAddIcon(SIZE), "switch-access-shortcut-add-icon"),
+            new IconView("Short By Alpha", new SortByAlphaIcon(SIZE), "sort-by-alpha-icon"),
+            new IconView("First Page", new FirstPageIcon(SIZE), "first-page-icon"),
+            new IconView("Last Page", new LastPageIcon(SIZE), "last-page-icon"),
+            new IconView("View Timeline", new ViewTimelineIcon(SIZE), "view-timeline-icon"),
+            new IconView("Settings Backup Restore", new SettingsBackupRestoreIcon(SIZE), "settings-backup-restore-icon"),
+            new IconView("Assistant Navigation", new AssistantNavigationIcon(SIZE), "assistant-navigation-icon"),
+            new IconView("Density Medium", new DensityMediumIcon(SIZE), "density-medium-icon"),
+            new IconView("Filter Alt Off", new FilterAltOffIcon(SIZE), "filter-alt-off-icon"),
+            new IconView("Expand", new ExpandIcon(SIZE), "expand-icon"),
+            new IconView("Subdirectory Arrow Right", new SubdirectoryArrowRightIcon(SIZE), "subdirectory-arrow-right"),
+            new IconView("Arrow Outward", new ArrowOutwardIcon(SIZE), "arrow-outward-icon"),
+            new IconView("Swipe Left", new SwipeLeftIcon(SIZE), "swipe-left-icon"),
+            new IconView("Swipe Right", new SwipeRightIcon(SIZE), "swipe-right-icon"),
+            new IconView("Swipe Up", new SwipeUpIcon(SIZE), "swipe-up-icon"),
+            new IconView("Auto Mode", new AutoModeIcon(SIZE), "auto-mode-icon"),
+            new IconView("System Update Alt", new SystemUpdateAltIcon(SIZE), "system-update-alt-icon"),
+            new IconView("Place Item", new PlaceItemIcon(SIZE), "place-item-icon"),
+            new IconView("Output", new OutputIcon(SIZE), "output-icon"),
+            new IconView("Fit Screen", new FitScreenIcon(SIZE), "fit-screen-icon"),
+            new IconView("Select All", new SelectAllIcon(SIZE), "select-all-icon"),
+            new IconView("Dynamic Form", new DynamicFormIcon(SIZE), "dynamic-form-icon"),
+            new IconView("Hide Source", new HideSourceIcon(SIZE), "hide-source-icon")
+    ));
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FilteredList<IconView> filteredList = new FilteredList<>(FXCollections.observableArrayList(
-                new IconView("Search", new SearchIcon(20), "search-icon"),
-                new IconView("Home", new HomeIcon(20), "home-icon"),
-                new IconView("Menu", new MenuIcon(20), "menu-icon"),
-                new IconView("Menu Open", new MenuOpenIcon(20), "menu-open-icon"),
-                new IconView("Close", new CloseIcon(20), "close-icon"),
-                new IconView("Settings", new SettingsIcon(20), "settings-icon"),
-                new IconView("Check", new CheckIcon(20), "check-icon"),
-                new IconView("Expand More", new ExpandMoreIcon(20), "expand-more-icon"),
-                new IconView("Expand Less", new ExpandLessIcon(20), "expand-less-icon"),
-                new IconView("Expand Circle Down", new ExpandCircleDown(20), "expand-circle-down-icon"),
-                new IconView("Check Circle", new CheckCircleIcon(20), "check-circle-icon"),
-                new IconView("Favorite", new FavoriteIcon(20), "favorite-icon"),
-                new IconView("Add", new AddIcon(20), "add-icon"),
-                new IconView("Add Box", new AddBoxIcon(20), "add-box-icon"),
-                new IconView("Delete", new DeleteIcon(20), "delete-icon"),
-                new IconView("Delete Forever", new DeleteForeverIcon(20), "delete-forever-icon"),
-                new IconView("Arrow Back", new ArrowBackIcon(20), "arrow-back-icon"),
-                new IconView("Arrow Forward", new ArrowForwardIcon(20), "arrow-forward-icon"),
-                new IconView("Arrow Up", new ArrowUpIcon(20), "arrow-up-icon"),
-                new IconView("Arrow Down", new ArrowDownIcon(20), "arrow-down-icon"),
-                new IconView("Star", new StarIcon(20), "star-icon"),
-                new IconView("Star Half", new StarHalfIcon(20), "star-half-icon"),
-                new IconView("Chevron Left", new ChevronLeftIcon(20), "chevron-left-icon"),
-                new IconView("Chevron Right", new ChevronRightIcon(20), "chevron-right-icon"),
-                new IconView("Logout", new LogoutIcon(20), "logout-icon"),
-                new IconView("Login", new LoginIcon(20), "login-icon"),
-                new IconView("Arrow Back IOS", new ArrowBackIosIcon(20), "arrow-back-ios-icon"),
-                new IconView("Arrow Forward IOS", new ArrowForwardIosIcon(20), "arrow-forward-ios-icon"),
-                new IconView("Add Circle", new AddCircleIcon(20), "add-circle-icon"),
-                new IconView("Cancel", new CancelIcon(20), "cancel-icon"),
-                new IconView("Arrow Drop Down", new ArrowDropDownIcon(20), "arrow-drop-down-icon"),
-                new IconView("Arrow Drop Up", new ArrowDropUpIcon(20), "arrow-drop-up-icon"),
-                new IconView("Arrow Right", new ArrowRightIcon(20), "arrow-right-icon"),
-                new IconView("Arrow Right Alt", new ArrowRightAltIcon(20), "arrow-right-alt-icon"),
-                new IconView("More Vert", new MoreVertIcon(20), "more-vert-icon"),
-                new IconView("More Horiz", new MoreHorizIcon(20), "more-horiz-icon"),
-                new IconView("Check Box", new CheckBoxIcon(20), "check-box-icon"),
-                new IconView("Toggle On", new ToggleOnIcon(20), "toggle-on-icon"),
-                new IconView("Toggle Off", new ToggleOffIcon(20), "toggle-off-icon"),
-                new IconView("Open In New", new OpenInNewIcon(20), "open-in-new-icon"),
-                new IconView("Open In Full", new OpenInFullIcon(20), "open-in-full-icon"),
-                new IconView("Check Box Outline Blank", new CheckBoxOutlineBlankIcon(20), "check-box-outline-blank-icon"),
-                new IconView("Refresh", new RefreshIcon(20), "refresh-icon"),
-                new IconView("Radio Button Unchecked", new RadioButtonUncheckedIcon(20), "radio-button-unchecked-icon"),
-                new IconView("Radio Button Checked", new RadioButtonCheckedIcon(20), "radio-button-checked-icon"),
-                new IconView("Apps", new AppsIcon(20), "apps-icon"),
-                new IconView("Download", new DownloadIcon(20), "download-icon"),
-                new IconView("Remove", new RemoveIcon(20), "remove-icon"),
-                new IconView("Bolt", new BoltIcon(20), "bolt-icon"),
-                new IconView("Filter List", new FilterListIcon(20), "filter-list-icon"),
-                new IconView("Sort", new SortIcon(20), "sort-icon"),
-                new IconView("Auto Renew", new AutoRenewIcon(20), "auto-renew-icon"),
-                new IconView("Key", new KeyIcon(20), "key-icon"),
-                new IconView("Sync", new SyncIcon(20), "sync-icon"),
-                new IconView("Block", new BlockIcon(20), "block-icon"),
-                new IconView("Restart Alt", new RestartAltIcon(20), "restart-alt-icon"),
-                new IconView("Shopping Cart Checkout", new ShoppingCartCheckoutIcon(20), "shopping-cart-checkout-icon"),
-                new IconView("Backspace", new BackspaceIcon(20), "backspace-icon"),
-                new IconView("Arrow Circle Right", new ArrowCircleRightIcon(20), "arrow-circle-right-icon"),
-                new IconView("Undo", new UndoIcon(20), "undo-icon"),
-                new IconView("Done All", new DoneAllIcon(20), "done-all-icon"),
-                new IconView("Done Outline", new DoneOutlineIcon(20), "done-outline-icon"),
-                new IconView("Do Not Disturb", new DoNotDisturbIcon(20), "do-not-disturb-icon"),
-                new IconView("Double Arrow", new DoubleArrowIcon(20), "double-arrow-icon"),
-                new IconView("Manage Search", new ManageSearchIcon(20), "manage-search-icon"),
-                new IconView("Sync Alt", new SyncAltIcon(20), "sync-alt-icon"),
-                new IconView("Zoom In", new ZoomInIcon(20), "zoom-in-icon"),
-                new IconView("Drag Indicator", new DragIndicatorIcon(20), "drag-indicator-icon"),
-                new IconView("Fullscreen", new FullscreenIcon(20), "fullscreen-icon"),
-                new IconView("Keyboard Double Arrow Right", new KeyboardDoubleArrowRightIcon(20), "keyboard-double-arrow-right-icon"),
-                new IconView("Settings Accessibility", new SettingsAccessibilityIcon(20), "settings-accessibility-icon"),
-                new IconView("Ios Share", new IosShareIcon(20), "ios-share-icon")
-        ));
+        TabPane tabPane = new TabPane();
+        VBox.setVgrow(tabPane, Priority.ALWAYS);
+        for (String category : categories) {
+            Tab tab = new Tab(category);
+            tab.setClosable(false);
+            tabPane.getTabs().add(tab);
+        }
 
+        // Search Group
         Label lblSearchIcon = new Label();
         lblSearchIcon.setGraphic(new SearchIcon(14));
 
@@ -102,8 +199,24 @@ public class MainTest extends Application {
         tfSearch.setPromptText("Search Icon");
         tfSearch.setOnKeyTyped(evt -> {
             String search = tfSearch.getText();
-            if (search.isEmpty()) filteredList.setPredicate(p -> true);
-            else filteredList.setPredicate(icon -> icon.label.getText().toLowerCase().contains(search.toLowerCase()));
+            if (search.isEmpty()) {
+                // clear
+                uiActions.setPredicate(p -> true);
+            } else {
+                FilteredList<IconView> filteredList;
+                switch (tabPane.getSelectionModel().getSelectedIndex()) {
+                    case 1:
+                    case 2:
+                    case 3:
+                        filteredList = null;
+                        break;
+                    default:
+                        filteredList = uiActions;
+                }
+                if (filteredList != null) {
+                    filteredList.setPredicate(icon -> icon.label.getText().toLowerCase().contains(search.toLowerCase()));
+                }
+            }
         });
         HBox.setHgrow(tfSearch, Priority.ALWAYS);
 
@@ -113,21 +226,22 @@ public class MainTest extends Application {
         toolbar.setPadding(new Insets(8));
         toolbar.getChildren().addAll(lblSearchIcon, tfSearch);
 
+        tabPane.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> tfSearch.clear());
+
+        VBox vBox = new VBox();
+        vBox.getChildren().addAll(toolbar, tabPane);
+
+        // UI Actions FlowPane
         FlowPane flowPane = new FlowPane();
         flowPane.setHgap(8);
         flowPane.setVgap(8);
         flowPane.setPadding(new Insets(16));
-
-        Bindings.bindContent(flowPane.getChildren(), filteredList);
-
+        Bindings.bindContent(flowPane.getChildren(), uiActions);
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setFitToWidth(true);
         scrollPane.setFitToHeight(true);
         scrollPane.setContent(flowPane);
-        VBox.setVgrow(scrollPane, Priority.ALWAYS);
-
-        VBox vBox = new VBox();
-        vBox.getChildren().addAll(toolbar, scrollPane);
+        tabPane.getTabs().get(0).setContent(scrollPane);
 
         Scene scene = new Scene(vBox, 600, 400);
         primaryStage.setScene(scene);
