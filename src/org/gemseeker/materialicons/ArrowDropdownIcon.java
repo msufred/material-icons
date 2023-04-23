@@ -2,13 +2,13 @@ package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
 
-public class ArrowDropdownIcon extends SVGIcon {
+public class ArrowDropDownIcon extends SVGIcon {
 
-    public ArrowDropdownIcon() {
+    public ArrowDropDownIcon() {
         super(DEFAULT_SIZE * 0.85, DEFAULT_SIZE * 0.45);
     }
 
-    public ArrowDropdownIcon(double size) {
+    public ArrowDropDownIcon(double size) {
         super(size * 0.85, size * 0.45);
     }
 
@@ -21,6 +21,6 @@ public class ArrowDropdownIcon extends SVGIcon {
 
     @Override
     protected String getIconStyleClass() {
-        return "arrow-dropdown-icon";
+        return "arrow-drop-down-icon";
     }
 }
