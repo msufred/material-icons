@@ -23,7 +23,7 @@ public class MainTest extends Application {
 
     private static final double SIZE = 24;
     private static final ArrayList<String> categories = new ArrayList<>(Arrays.asList(
-            "UI Actions"
+            "UI Actions", "Social"
     ));
 
     // UI Actions Icons
