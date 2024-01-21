@@ -15,7 +15,7 @@ public class CloseIcon extends SVGIcon {
     @Override
     protected SVGPath createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z");
+        path.setContent("m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z");
         return path;
     }
 

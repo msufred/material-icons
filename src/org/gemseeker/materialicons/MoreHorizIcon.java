@@ -5,11 +5,11 @@ import javafx.scene.shape.SVGPath;
 public class MoreHorizIcon extends SVGIcon {
 
     public MoreHorizIcon() {
-        super(DEFAULT_SIZE, DEFAULT_SIZE * 0.125);
+        super(DEFAULT_SIZE, DEFAULT_SIZE * 0.15);
     }
 
     public MoreHorizIcon(double size) {
-        super(size, size * 0.125);
+        super(size, size * 0.15);
     }
 
     @Override

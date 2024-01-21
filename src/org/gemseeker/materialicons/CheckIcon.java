@@ -15,7 +15,7 @@ public class CheckIcon extends SVGIcon {
     @Override
     protected SVGPath createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M378 810 154 586l43-43 181 181 384-384 43 43-427 427Z");
+        path.setContent("M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z");
         return path;
     }
 

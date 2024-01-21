@@ -15,7 +15,7 @@ public class HomeIcon extends SVGIcon {
     @Override
     protected SVGPath createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M160 936V456l320-240 320 240v480H560V656H400v280H160Z");
+        path.setContent("M160-120v-480l320-240 320 240v480H560v-280H400v280H160Z");
         return path;
     }
 

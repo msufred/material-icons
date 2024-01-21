@@ -15,7 +15,7 @@ public class AddIcon extends SVGIcon {
     @Override
     protected SVGPath createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M450 856V606H200v-60h250V296h60v250h250v60H510v250h-60Z");
+        path.setContent("M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z");
         return path;
     }
 

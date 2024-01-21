@@ -5,11 +5,11 @@ import javafx.scene.shape.SVGPath;
 public class MoreVertIcon extends SVGIcon {
 
     public MoreVertIcon() {
-        super(DEFAULT_SIZE * 0.125, DEFAULT_SIZE);
+        super(DEFAULT_SIZE * 0.15, DEFAULT_SIZE);
     }
 
     public MoreVertIcon(double size) {
-        super(size * 0.125, size);
+        super(size * 0.15, size);
     }
 
     @Override

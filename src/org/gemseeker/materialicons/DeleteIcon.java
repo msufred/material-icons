@@ -5,11 +5,11 @@ import javafx.scene.shape.SVGPath;
 public class DeleteIcon extends SVGIcon {
 
     public DeleteIcon() {
-        super(DEFAULT_SIZE * 0.85, DEFAULT_SIZE);
+        super(DEFAULT_SIZE * 0.875, DEFAULT_SIZE);
     }
 
     public DeleteIcon(double size) {
-        super(size * 0.85, size);
+        super(size * 0.875, size);
     }
 
     @Override

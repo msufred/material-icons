@@ -256,6 +256,7 @@ public class MainTest extends Application {
             new IconView("Clock Loader 20", new ClockLoader20Icon(SIZE), "clock-loader-20-icon"),
             new IconView("Clock Loader 40", new ClockLoader40Icon(SIZE), "clock-loader-40-icon"),
             new IconView("Clock Loader 60", new ClockLoader60Icon(SIZE), "clock-loader-60-icon"),
+            new IconView("Clock Loader 80", new ClockLoader80Icon(SIZE), "clock-loader-80-icon"),
             new IconView("Clock Loader 90", new ClockLoader90Icon(SIZE), "clock-loader-90-icon"),
             new IconView("Data Alert", new DataAlertIcon(SIZE), "data-alert-icon"),
             new IconView("Data Check", new DataCheckIcon(SIZE), "data-check-icon"),
@@ -278,7 +279,16 @@ public class MainTest extends Application {
             new IconView("Resize", new ResizeIcon(SIZE), "resize-icon"),
             new IconView("Chronic", new ChronicIcon(SIZE), "chronic-icon"),
             new IconView("Input Circle", new InputCircleIcon(SIZE), "input-circle-icon"),
-            new IconView("Bottom Right Click", new BottomRightClickIcon(SIZE), "bottom-right-click-icon")
+            new IconView("Bottom Right Click", new BottomRightClickIcon(SIZE), "bottom-right-click-icon"),
+            new IconView("Stack", new StackIcon(SIZE), "stack-icon"),
+            new IconView("Stack Off", new StackOffIcon(SIZE), "stack-off-icon"),
+            new IconView("Right Panel Close", new RightPanelCloseIcon(SIZE), "right-panel-close-icon"),
+            new IconView("Go To Line", new GoToLineIcon(SIZE), "goto-line-icon"),
+            new IconView("Page Info", new PageInfoIcon(SIZE), "page-info-icon"),
+            new IconView("Shelf Position", new ShelfPositionIcon(SIZE), "shelf-position-icon"),
+            new IconView("Step", new StepIcon(SIZE), "step-icon"),
+            new IconView("All Match", new AllMatchIcon(SIZE), "all-match-icon"),
+            new IconView("Right Click", new RightClickIcon(SIZE), "right-click-icon")
     ));
 
     @Override
