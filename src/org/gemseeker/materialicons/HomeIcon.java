@@ -1,21 +1,22 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class HomeIcon extends SVGIcon {
 
     public HomeIcon() {
-        super(DEFAULT_SIZE * 0.85, DEFAULT_SIZE);
+        super(DEFAULT_SIZE, DEFAULT_SIZE * 0.85);
     }
 
     public HomeIcon(double size) {
-        super(size * 0.85, size);
+        super(size, size * 0.85);
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M160-120v-480l320-240 320 240v480H560v-280H400v280H160Z");
+        path.setContent("M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z");
         return path;
     }
 

@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class DoneAllIcon extends SVGIcon {
 
@@ -13,7 +14,7 @@ public class DoneAllIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
         path.setContent("M294 814 70 590l43-43 181 181 43 43-43 43Zm170 0L240 590l43-43 181 181 384-384 43 43-427 " +
                 "427Zm0-170-43-43 257-257 43 43-257 257Z");

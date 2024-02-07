@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class AddTaskIcon extends SVGIcon {
 
@@ -13,12 +14,12 @@ public class AddTaskIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M480 976q-85 0-158-30.5T195 861q-54-54-84.5-127T80 576q0-84 30.5-157T195 292q54-54 " +
-                "127-85t158-31q75 0 140 24t117 66l-43 43q-44-35-98-54t-116-19q-145 0-242.5 97.5T140 576q0 145 " +
-                "97.5 242.5T480 916q37 0 71.5-7t66.5-21l45 46q-41 20-87 31t-96 11Zm290-90V766H650v-60h120V586h60v" +
-                "120h120v60H830v120h-60ZM421 758 256 592l45-45 120 120 414-414 46 45-460 460Z");
+        path.setContent("M22 5.18L10.59 16.6l-4.24-4.24l1.41-1.41l2.83 2.83l10-10zM12 20c-4.41 " +
+                "0-8-3.59-8-8s3.59-8 8-8c1.57 0 3.04.46 4.28 1.25l1.45-1.45A10.02 10.02 0 0 0 1" +
+                "2 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.73 0 3.36-.44 4.78-1.22l-1.5-1.5c-1 .46" +
+                "-2.11.72-3.28.72m7-5h-3v2h3v3h2v-3h3v-2h-3v-3h-2z");
         return path;
     }
 

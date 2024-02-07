@@ -1,0 +1,7 @@
+.material-icon {
+    -fx-background-color: #0f172a;
+}
+
+.material-icon:hover {
+    -fx-background-color: #334155;
+}

@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class ArrowOutwardIcon extends SVGIcon {
 
@@ -13,9 +14,9 @@ public class ArrowOutwardIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("m248 810-42-42 412-412H240v-60h480v480h-60V398L248 810Z");
+        path.setContent("M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z");
         return path;
     }
 

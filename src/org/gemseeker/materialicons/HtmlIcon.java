@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class HtmlIcon extends SVGIcon {
 
@@ -13,11 +14,10 @@ public class HtmlIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M0 696V456h48v89h108v-89h48v240h-48V593H48v103H0Zm316 0V504h-70v-48h188v48h-70v192h-48Zm160 " +
-                "0V490q0-15 9.5-24.5T510 456h200q15 0 24.5 9.5T744 490v206h-48V504h-62v150h-48V504h-62v192h-48Zm326 " +
-                "0V456h48v192h110v48H802Z");
+        path.setContent("M3.5 9H5v6H3.5v-2.5h-2V15H0V9h1.5v2h2zm14 0H13c-.55 0-1 .45-1 1v5h1.5v-4." +
+                "5h1V14H16v-3.51h1V15h1.5v-5c0-.55-.45-1-1-1M11 9H6v1.5h1.75V15h1.5v-4.5H11zm13 6v-1.5h-2.5V9H20v6z");
         return path;
     }
 

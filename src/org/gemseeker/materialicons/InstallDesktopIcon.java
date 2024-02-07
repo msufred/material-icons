@@ -1,23 +1,25 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class InstallDesktopIcon extends SVGIcon {
 
     public InstallDesktopIcon() {
-        super(DEFAULT_SIZE * 1.125, DEFAULT_SIZE);
+        super(DEFAULT_SIZE, DEFAULT_SIZE * 0.875);
     }
 
     public InstallDesktopIcon(double size) {
-        super(size * 1.125, size);
+        super(size, size * 0.875);
     }
 
     @Override
-    protected SVGPath createShape() {
-        SVGPath path = new SVGPath();
-        path.setContent("M330 936v-80H140q-24 0-42-18t-18-42V276q0-24 18-42t42-18h360v60H140v520h680V656h60v140q0 24-18 " +
-                "42t-42 18H630v80H330Zm350-294L494 456l42-42 114 114V216h60v312l114-114 42 42-186 186Z");
-        return path;
+    protected Shape createShape() {
+        SVGPath p1 = new SVGPath();
+        p1.setContent("M20 17H4V5h8V3H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h4v2h8v-2h4c1.1 0 2-.9 2-2v-3h-2z");
+        SVGPath p2 = new SVGPath();
+        p2.setContent("m17 14l5-5l-1.41-1.41L18 10.17V3h-2v7.17l-2.59-2.58L12 9z");
+        return Shape.union(p1, p2);
     }
 
     @Override

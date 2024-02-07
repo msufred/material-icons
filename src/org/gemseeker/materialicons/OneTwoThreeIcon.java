@@ -15,9 +15,8 @@ public class OneTwoThreeIcon extends SVGIcon {
     @Override
     protected SVGPath createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M220 696V504h-60v-48h108v240h-48Zm132 0V586q0-15 9.5-24.5T386 552h98v-48H352v-48h146q15 0 " +
-                "24.5 9.5T532 490v76q0 15-9.5 24.5T498 600h-98v48h132v48H352Zm248 0v-48h132v-48h-92v-48h92v-48H600v-" +
-                "48h146q15 0 24.5 9.5T780 490v172q0 15-9.5 24.5T746 696H600Z");
+        path.setContent("M7 15H5.5v-4.5H4V9h3zm6.5-1.5h-3v-1h2c.55 0 1-.45 1-1V10c0-.55-.45-1-1-1H9v1.5h3v1h-2c-.55 0-1 " +
+                ".45-1 1V15h4.5zm6 .5v-4c0-.55-.45-1-1-1H15v1.5h3v1h-2v1h2v1h-3V15h3.5c.55 0 1-.45 1-1");
         return path;
     }
 

@@ -1,21 +1,22 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class ArrowRightAltIcon extends SVGIcon {
 
     public ArrowRightAltIcon() {
-        super(DEFAULT_SIZE, DEFAULT_SIZE * 0.75);
+        super(DEFAULT_SIZE, DEFAULT_SIZE * 0.5);
     }
 
     public ArrowRightAltIcon(double size) {
-        super(size, size * 0.75);
+        super(size, size * 0.5);
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("m561 814-43-42 168-168H160v-60h526L517 375l43-42 241 241-240 240Z");
+        path.setContent("M16.01 11H4v2h12.01v3L20 12l-3.99-4z");
         return path;
     }
 

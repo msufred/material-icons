@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class DensityMediumIcon extends SVGIcon {
 
@@ -13,9 +14,9 @@ public class DensityMediumIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M120 936v-60h720v60H120Zm0-330v-60h720v60H120Zm0-330v-60h720v60H120Z");
+        path.setContent("M3 3h18v2H3zm0 16h18v2H3zm0-8h18v2H3z");
         return path;
     }
 

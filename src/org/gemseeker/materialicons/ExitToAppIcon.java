@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class ExitToAppIcon extends SVGIcon {
 
@@ -13,10 +14,10 @@ public class ExitToAppIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M180 936q-24 0-42-18t-18-42V666h60v210h600V274H180v212h-60V274q0-24 18-42t42-18h600q24 0 42 " +
-                "18t18 42v602q0 24-18 42t-42 18H180Zm233-167-45-45 118-118H120v-60h366L368 428l45-45 193 193-193 193Z");
+        path.setContent("M10.09 15.59L11.5 17l5-5l-5-5l-1.41 1.41L12.67 11H3v2h9.67zM19 3H5a2 2 0 0 0-2 " +
+                "2v4h2V5h14v14H5v-4H3v4a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2");
         return path;
     }
 

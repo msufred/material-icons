@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class AbcIcon extends SVGIcon {
 
@@ -13,13 +14,11 @@ public class AbcIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M667 696q-15 0-24.5-9.5T633 662V490q0-15 9.5-24.5T667 456h139q15 0 24.5 9.5T840 " +
-                "490v46h-48v-32H681v144h111v-32h48v46q0 15-9.5 24.5T806 696H667Zm-287 0V456h173q15 0 24.5 9.5T587 " +
-                "490v52q0 15-9.5 24.5T553 576q15 0 24.5 9.5T587 610v52q0 15-9.5 24.5T553 696H380Zm48-144h111v-" +
-                "48H428v48Zm0 96h111v-48H428v48Zm-308 48V490q0-15 9.5-24.5T154 456h139q15 0 24.5 9.5T327 " +
-                "490v206h-48v-77H168v77h-48Zm48-125h111v-67H168v67Z");
+        path.setContent("M21 11h-1.5v-.5h-2v3h2V13H21v1c0 .55-.45 1-1 1h-3c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1h3c.55 0 1 " +
+                ".45 1 1zM8 10v5H6.5v-1.5h-2V15H3v-5c0-.55.45-1 1-1h3c.55 0 1 .45 1 1m-1.5.5h-2V12h2zm7 1.5c.55 0 1 .45 " +
+                "1 1v1c0 .55-.45 1-1 1h-4V9h4c.55 0 1 .45 1 1v1c0 .55-.45 1-1 1M11 10.5v.75h2v-.75zm2 2.25h-2v.75h2z");
         return path;
     }
 

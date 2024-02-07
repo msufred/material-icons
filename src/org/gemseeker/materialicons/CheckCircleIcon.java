@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class CheckCircleIcon extends SVGIcon {
 
@@ -13,11 +14,10 @@ public class CheckCircleIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("m421 758 283-283-46-45-237 237-120-120-45 45 165 166Zm59 218q-82 0-155-31.5t-127.5-86Q143 804 " +
-                "111.5 731T80 576q0-83 31.5-156t86-127Q252 239 325 207.5T480 176q83 0 156 31.5T763 293q54 54 85.5 " +
-                "127T880 576q0 82-31.5 155T763 858.5q-54 54.5-127 86T480 976Z");
+        path.setContent("M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m-2 " +
+                "15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8z");
         return path;
     }
 

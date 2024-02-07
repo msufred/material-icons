@@ -1,23 +1,23 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class FitScreenIcon extends SVGIcon {
 
     public FitScreenIcon() {
-        super(DEFAULT_SIZE * 1.125, DEFAULT_SIZE * 0.85);
+        super(DEFAULT_SIZE, DEFAULT_SIZE * 0.8);
     }
 
     public FitScreenIcon(double size) {
-        super(size * 1.125, size * 0.85);
+        super(size, size * 0.8);
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M820 446V316H690v-60h130q24 0 42 18t18 42v130h-60Zm-740 0V316q0-24 " +
-                "18-42t42-18h130v60H140v130H80Zm610 450v-60h130V706h60v130q0 24-18 42t-42 " +
-                "18H690Zm-550 0q-24 0-42-18t-18-42V706h60v130h130v60H140Zm60-120V376h560v400H200Z");
+        path.setContent("M17 4h3c1.1 0 2 .9 2 2v2h-2V6h-3zM4 8V6h3V4H4c-1.1 0-2 .9-2 2v2zm16 " +
+                "8v2h-3v2h3c1.1 0 2-.9 2-2v-2zM7 18H4v-2H2v2c0 1.1.9 2 2 2h3zM18 8H6v8h12z");
         return path;
     }
 

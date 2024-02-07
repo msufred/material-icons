@@ -1,23 +1,22 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class CompressIcon extends SVGIcon {
 
     public CompressIcon() {
-        super(DEFAULT_SIZE, DEFAULT_SIZE * 1.25);
+        super(DEFAULT_SIZE * 0.75, DEFAULT_SIZE);
     }
 
     public CompressIcon(double size) {
-        super(size, size * 1.25);
+        super(size * 0.75, size);
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M449 976V818l-77 76-42-42 149-148 147 148-42 42-75-76v158h-60ZM161 " +
-                "646v-60h639v60H161Zm0-121v-60h639v60H161Zm318-117L331 260l42-42 75 " +
-                "76V136h60v158l77-76 42 42-148 148Z");
+        path.setContent("M8 19h3v3h2v-3h3l-4-4zm8-15h-3V1h-2v3H8l4 4zM4 9v2h16V9zm0 3h16v2H4z");
         return path;
     }
 

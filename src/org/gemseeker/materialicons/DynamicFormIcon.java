@@ -1,23 +1,23 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class DynamicFormIcon extends SVGIcon {
 
     public DynamicFormIcon() {
-        super(DEFAULT_SIZE * 1.125, DEFAULT_SIZE);
+        super(DEFAULT_SIZE, DEFAULT_SIZE * 0.8);
     }
 
     public DynamicFormIcon(double size) {
-        super(size * 1.125, size);
+        super(size, size * 0.8);
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M140 546q-24.75 0-42.375-17.625T80 486V316q0-24.75 17.625-42.375T140 256h400v290H140Zm0 " +
-                "350q-24.75 0-42.375-17.625T80 836V666q0-24.75 17.625-42.375T140 606h480v290H140Zm540 0V546h-" +
-                "80V256h280l-80 220h80L680 896ZM195 781h60v-60h-60v60Zm0-350h60v-60h-60v60Z");
+        path.setContent("M17 20v-9h-2V4h7l-2 5h2zm-2-7v7H4c-1.1 0-2-.9-2-2v-3c0-1.1.9-2 2-2zm-8.75 " +
+                "2.75h-1.5v1.5h1.5zM13 4v7H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zM6.25 6.75h-1.5v1.5h1.5z");
         return path;
     }
 

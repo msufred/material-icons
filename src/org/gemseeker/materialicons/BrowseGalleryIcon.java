@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class BrowseGalleryIcon extends SVGIcon {
 
@@ -13,13 +14,13 @@ public class BrowseGalleryIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
-        SVGPath path = new SVGPath();
-        path.setContent("m472 730 42-42-124-123.897V386h-60v202l142 142Zm255 182v-68q79-37 126-109t47-159.5q0-87.5-47" +
-                "-160T727 307v-68q104 42 168.5 133.034 64.5 91.033 64.5 203Q960 687 896 778.5 832 870 727 912Zm-367 " +
-                "23q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T0 575q0-75 28.5-140.5t77-114q48.5-48.5 114-77T360 " +
-                "215q75 0 140.5 28.5t114 77q48.5 48.5 77 114T720 575q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T360 935Z");
-        return path;
+    protected Shape createShape() {
+        SVGPath p1 = new SVGPath();
+        p1.setContent("M9 3a9 9 0 1 0 .001 18.001A9 9 0 0 0 9 3m2.79 13.21L8 12.41V7h2v4.59l3.21 3.21z");
+        SVGPath p2 = new SVGPath();
+        p2.setContent("M17.99 3.52v2.16A6.99 6.99 0 0 1 22 12c0 2.79-1.64 5.2-4.01 6.32v2.16C21.48 19.24 " +
+                "24 15.91 24 12s-2.52-7.24-6.01-8.48");
+        return Shape.union(p1, p2);
     }
 
     @Override

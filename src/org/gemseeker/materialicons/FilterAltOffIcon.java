@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class FilterAltOffIcon extends SVGIcon {
 
@@ -13,10 +14,10 @@ public class FilterAltOffIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M580 591 245 256h527q21 0 31 19t-4 36L580 591Zm233 404L560 742v114q0 17-11.5 28.5T520 " +
-                "896h-80q-17 0-28.5-11.5T400 856V582L61 243l43-43 752 752-43 43Z");
+        path.setContent("M19.79 5.61A.998.998 0 0 0 19 4H6.83l7.97 7.97zM2.81 2.81L1.39 4.22L10 13v6c0 " +
+                ".55.45 1 1 1h2c.55 0 1-.45 1-1v-2.17l5.78 5.78l1.41-1.41z");
         return path;
     }
 

@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class DataThresholdingIcon extends SVGIcon {
 
@@ -13,12 +14,11 @@ public class DataThresholdingIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M180 936q-25 0-42.5-17.5T120 876V276q0-25 17.5-42.5T180 216h600q25 0 42.5 17.5T840 " +
-                "276v600q0 25-17.5 42.5T780 936H180Zm446-60h71l83-83v-37h-34L626 876ZM281 662l141-140 90 90 " +
-                "209-210-42-42-167 167-90-90-183 183 42 42ZM180 876h34l120-120h-71l-83 83v37Zm356 0 " +
-                "120-120h-71L465 876h71Zm-161 0 120-120h-71L304 876h71Z");
+        path.setContent("M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-8.33 " +
+                "5.17l2 2l3.67-3.67l1.41 1.41L12.67 13l-2-2l-3 3l-1.41-1.41zM5 16h1.72L5 17.72zm.84 3l3-3h1" +
+                ".83l-3 3zm3.96 0l3-3h1.62l-3 3zm3.73 0l3-3h1.62l-3 3zM19 19h-1.73L19 17.27z");
         return path;
     }
 

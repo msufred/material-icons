@@ -21,9 +21,294 @@ import java.util.Arrays;
 
 public class MainTest extends Application {
 
-    private static final double SIZE = 24;
+    private static final double SIZE = 48;
     private static final ArrayList<String> categories = new ArrayList<>(Arrays.asList(
-            "UI Actions", "Social"
+            "Actions", "UI Actions", "Social"
+    ));
+
+    private final FilteredList<IconView> actions = new FilteredList<>(FXCollections.observableArrayList(
+            new IconView("123", new OneTwoThreeIcon(SIZE), "one-two-three-icon"),
+            new IconView("3D", new Icon3D(SIZE), "icon-3d"),
+            new IconView("ABC", new AbcIcon(SIZE), "abc-icon"),
+            new IconView("Accessibility", new AccessibilityIcon(SIZE), "accessibility-icon"),
+            new IconView("Accessibility New", new AccessibilityNewIcon(SIZE), "accessibility-new-icon"),
+            new IconView("Accessible", new AccessibleIcon(SIZE), "accessible-icon"),
+            new IconView("Accessible Forward", new AccessibleForwardIcon(SIZE), "accessible-forward-icon"),
+            new IconView("Account Balance", new AccountBalanceIcon(SIZE), "account-balance-icon"),
+            new IconView("Account Balance Wallet", new AccountBalanceWalletIcon(SIZE), "account-balance-wallet-icon"),
+            new IconView("Account Box", new AccountBoxIcon(SIZE), "account-box-icon"),
+            new IconView("Account Circle", new AccountCircleIcon(SIZE), "account-circle-icon"),
+            new IconView("Add Card", new AddCardIcon(SIZE), "add-card-icon"),
+            new IconView("Add Home", new AddHomeIcon(SIZE), "add-home-icon"),
+            new IconView("Add Shopping Cart", new AddShoppingCartIcon(SIZE), "add-shopping-cart-icon"),
+            new IconView("Add Task", new AddTaskIcon(SIZE), "add-task-icon"),
+            new IconView("Add To Drive", new AddToDriveIcon(SIZE), "add-to-drive-icon"),
+            new IconView("Add Chart", new AddChartIcon(SIZE), "add-chart-icon"),
+            new IconView("Admin Panel Settings", new AdminPanelSettingsIcon(SIZE), "admin-panel-settings-icon"),
+            new IconView("Ads Click", new AdsClickIcon(SIZE), "ads-click-icon"),
+            new IconView("Alarm", new AlarmIcon(SIZE), "alarm-icon"),
+            new IconView("Alarm Add", new AlarmAddIcon(SIZE), "alarm-add-icon"),
+            new IconView("Alarm Off", new AlarmOffIcon(SIZE), "alarm-off-icon"),
+            new IconView("Alarm On", new AlarmOnIcon(SIZE), "alarm-on-icon"),
+            new IconView("All Inbox", new AllInboxIcon(SIZE), "all-inbox-icon"),
+            new IconView("All Out", new AllOutIcon(SIZE), "all-out-icon"),
+            new IconView("Analytics", new AnalyticsIcon(SIZE), "analytics-icon"),
+            new IconView("Anchor", new AnchorIcon(SIZE), "anchor-icon"),
+            new IconView("Android", new AndroidIcon(SIZE), "android-icon"),
+            new IconView("Announcement", new AnnouncementIcon(SIZE), "announcement-icon"),
+            new IconView("API", new ApiIcon(SIZE), "api-icon"),
+            new IconView("App Blocking", new AppBlockingIcon(SIZE), "app-blocking-icon"),
+            new IconView("App Shortcut", new AppShortcutIcon(SIZE), "app-shortcut-icon"),
+            new IconView("Arrow Circle Down", new ArrowCircleDownIcon(SIZE), "arrow-circle-down-icon"),
+            new IconView("Arrow Circle Left", new ArrowCircleLeftIcon(SIZE), "arrow-circle-left-icon"),
+            new IconView("Arrow Circle Up", new ArrowCircleUpIcon(SIZE), "arrow-circle-up-icon"),
+            new IconView("Arrow Circle Right", new ArrowCircleRightIcon(SIZE), "arrow-circle-right-icon"),
+            new IconView("Arrow Outward", new ArrowOutwardIcon(SIZE), "arrow-outward"),
+            new IconView("Arrow Right Alt", new ArrowRightAltIcon(SIZE), "arrow-right-alt"),
+            new IconView("Article", new ArticleIcon(SIZE), "article-icon"),
+            new IconView("Aspect Ratio", new AspectRatioIcon(SIZE), "aspect-ratio-icon"),
+            new IconView("Assessment", new AssessmentIcon(SIZE), "assessment-icon"),
+            new IconView("Assignment", new AssignmentIcon(SIZE), "assignment-icon"),
+            new IconView("Assignment Ind", new AssignmentIndIcon(SIZE), "assignment-ind-icon"),
+            new IconView("Assignment Late", new AssignmentLateIcon(SIZE), "assignment-late-icon"),
+            new IconView("Assignment Return", new AssignmentReturnIcon(SIZE), "assignment-return-icon"),
+            new IconView("Assignment Returned", new AssignmentReturnedIcon(SIZE), "assignment-returned-icon"),
+            new IconView("Assignment Turned In", new AssignmentTurnedInIcon(SIZE), "assignment-turned-in-icon"),
+            new IconView("Assured Workload", new AssuredWorkloadIcon(SIZE), "assured-workload-icon"),
+
+            new IconView("Auto Renew", new AutoRenewIcon(SIZE), "auto-renew-icon"),
+            new IconView("Backup", new BackupIcon(SIZE), "backup-icon"),
+            new IconView("Backup Table", new BackupTableIcon(SIZE), "backup-table-icon"),
+            new IconView("Balance", new BalanceIcon(SIZE), "balance-icon"),
+            new IconView("Batch Prediction", new BatchPredictionIcon(SIZE), "batch-prediction"),
+            new IconView("Book", new BookIcon(SIZE), "book-icon"),
+            new IconView("Book Online", new BookOnlineIcon(SIZE), "book-online-icon"),
+            new IconView("Bookmark", new BookmarkIcon(SIZE), "bookmark-icon"),
+            new IconView("Bookmark Add", new BookmarkAddIcon(SIZE), "bookmark-add-icon"),
+            new IconView("Bookmark Added", new BookmarkAddedIcon(SIZE), "bookmark-added-icon"),
+            new IconView("Bookmark Border", new BookmarkBorderIcon(SIZE), "bookmark-border-icon"),
+            new IconView("Bookmark Remove", new BookmarkRemoveIcon(SIZE), "bookmark-remove-icon"),
+            new IconView("Bookmarks", new BookmarksIcon(SIZE), "bookmarks-icon"),
+            new IconView("Browse Gallery", new BrowseGalleryIcon(SIZE), "browse-gallery-icon"),
+            new IconView("Bug Report", new BugReportIcon(SIZE), "bug-report-icon"),
+            new IconView("Build", new BuildIcon(SIZE), "build-icon"),
+            new IconView("Build Circle", new BuildCircleIcon(SIZE), "build-circle-icon"),
+            new IconView("Cached", new CachedIcon(SIZE), "cached-icon"),
+            new IconView("Calendar Month", new CalendarMonthIcon(SIZE), "calendar-month-icon"),
+            new IconView("Calendar Today", new CalendarTodayIcon(SIZE), "calendar-today-icon"),
+            new IconView("Calendar View Day", new CalendarViewDayIcon(SIZE), "calendar-view-day-icon"),
+            new IconView("Calendar View Month", new CalendarViewMonthIcon(SIZE), "calendar-view-month-icon"),
+            new IconView("Calendar View Week", new CalendarViewWeekIcon(SIZE), "calendar-view-week-icon"),
+            new IconView("Camera Enhance", new CameraEnhanceIcon(SIZE), "camera-enhance-icon"),
+            new IconView("Cancel Schedule Send", new CancelScheduleSendIcon(SIZE), "cancel-schedule-send-icon"),
+            new IconView("Card Gift Card", new CardGiftCardIcon(SIZE), "card-gift-card-icon"),
+            new IconView("Card Membership", new CardMembershipIcon(SIZE), "card-membership-icon"),
+            new IconView("Card Travel", new CardTravelIcon(SIZE), "card-travel-icon"),
+            new IconView("Change History", new ChangeHistoryIcon(SIZE), "change-history-icon"),
+            new IconView("Check Circle", new CheckCircleIcon(SIZE), "check-circle-icon"),
+            new IconView("Check Circle Outline", new CheckCircleOutlineIcon(SIZE), "check-circle-outline-icon"),
+            new IconView("Chrome Reader Mode", new ChromeReaderModeIcon(SIZE), "chrome-reader-mode-icon"),
+            new IconView("Circle Notifications", new CircleNotificationsIcon(SIZE), "circle-notifications-icon"),
+            new IconView("Class", new ClassIcon(SIZE), "class-icon"),
+            new IconView("Close Fullscreen", new CloseFullscreenIcon(SIZE), "close-fullscreen-icon"),
+            new IconView("Code", new CodeIcon(SIZE), "code-icon"),
+            new IconView("Code Off", new CodeOffIcon(SIZE), "code-off-icon"),
+            new IconView("Comment Bank", new CommentBankIcon(SIZE), "commend-bank-icon"),
+            new IconView("Commit", new CommitIcon(SIZE), "commit-icon"),
+            new IconView("Commute", new CommuteIcon(SIZE), "commute-icon"),
+            new IconView("Compare Arrows", new CompareArrowsIcon(SIZE), "compare-arrows-icon"),
+            new IconView("Compress", new CompressIcon(SIZE), "compress-icon"),
+            new IconView("Contact Page", new ContactPageIcon(SIZE), "contact-page-icon"),
+            new IconView("Contact Support", new ContactSupportIcon(SIZE), "contact-support-icon"),
+            new IconView("Contactless", new ContactlessIcon(SIZE), "contactless-icon"),
+            new IconView("Copyright", new CopyrightIcon(SIZE), "copyright-icon"),
+            new IconView("Credit Card", new CreditCardIcon(SIZE), "credit-card-icon"),
+            new IconView("Credit Card Off", new CreditCardOffIcon(SIZE), "credit-card-off-icon"),
+
+            new IconView("CSS", new CssIcon(SIZE), "css-icon"),
+            new IconView("Currency Exchange", new CurrencyExchangeIcon(SIZE), "currency-exchange-icon"),
+            new IconView("Dangerous", new DangerousIcon(SIZE), "dangerous-icon"),
+            new IconView("Dashboard", new DashboardIcon(SIZE), "dashboard-icon"),
+            new IconView("Dashboard Customize", new DashboardCustomizeIcon(SIZE), "dashboard-customize-icon"),
+            new IconView("Data Exploration", new DataExplorationIcon(SIZE), "data-exploration-icon"),
+            new IconView("Data Thresholding", new DataThresholdingIcon(SIZE), "data-thresholding-icon"),
+            new IconView("Date Range", new DateRangeIcon(SIZE), "date-range-icon"),
+            new IconView("Delete", new DeleteIcon(SIZE), "delete-icon"),
+            new IconView("Delete Forever", new DeleteForeverIcon(SIZE), "delete-forever-icon"),
+            new IconView("Delete Outline", new DeleteOutlineIcon(SIZE), "delete-outline-icon"),
+            new IconView("Density Large", new DensityLargeIcon(SIZE), "density-large-icon"),
+            new IconView("Density Medium", new DensityMediumIcon(SIZE), "density-medium-icon"),
+            new IconView("Density Small", new DensitySmallIcon(SIZE), "density-small-icon"),
+            new IconView("Description", new DescriptionIcon(SIZE), "description-icon"),
+            new IconView("Disabled By Default", new DisabledByDefaultIcon(SIZE), "disabled-by-default-icon"),
+            new IconView("Disabled Visible", new DisabledVisibleIcon(SIZE), "disabled-visible-icon"),
+            new IconView("Display Settings", new DisplaySettingsIcon(SIZE), "display-settings-icon"),
+            new IconView("DNS", new DnsIcon(SIZE), "dns-icon"),
+            new IconView("Done", new DoneIcon(SIZE), "done-icon"),
+            new IconView("Done All", new DoneAllIcon(SIZE), "done-all-icon"),
+            new IconView("Done Outline", new DoneOutlineIcon(SIZE), "done-outline-icon"),
+            new IconView("Donut Large", new DonutLargeIcon(SIZE), "donut-large-icon"),
+            new IconView("Donut Small", new DonutSmallIcon(SIZE), "donut-small-icon"),
+            new IconView("Drag Indicator", new DragIndicatorIcon(SIZE), "drag-indicator-icon"),
+            new IconView("Dynamic Form", new DynamicFormIcon(SIZE), "dynamic-form-icon"),
+            new IconView("Eco", new EcoIcon(SIZE), "eco-icon"),
+            new IconView("Edit Calendar", new EditCalendarIcon(SIZE), "edit-calendar-icon"),
+            new IconView("Edit Off", new EditOffIcon(SIZE), "edit-off-icon"),
+            new IconView("Eject", new EjectIcon(SIZE), "eject-icon"),
+            new IconView("Euro", new EuroIcon(SIZE), "euro-icon"),
+            new IconView("Event", new EventIcon(SIZE), "event-icon"),
+            new IconView("Event Repeat", new EventRepeatIcon(SIZE), "event-repeat-icon"),
+            new IconView("Event Seat", new EventSeatIcon(SIZE), "event-seat-icon"),
+            new IconView("Exit To App", new ExitToAppIcon(SIZE), "exit-to-app-icon"),
+            new IconView("Expand", new ExpandIcon(SIZE), "expand-icon"),
+            new IconView("Explore", new ExploreIcon(SIZE), "explore-icon"),
+            new IconView("Explore Off", new ExploreOffIcon(SIZE), "explore-off-icon"),
+            new IconView("Extension", new ExtensionIcon(SIZE), "extension-icon"),
+            new IconView("Extension Off", new ExtensionOffIcon(SIZE), "extension-off-icon"),
+            new IconView("Face", new FaceIcon(SIZE), "face-icon"),
+            new IconView("Fact Check", new FactCheckIcon(SIZE), "fact-check-icon"),
+            new IconView("Favorite", new FavoriteIcon(SIZE), "favorite-icon"),
+            new IconView("Favorite Border", new FavoriteBorderIcon(SIZE), "favorite-border-icon"),
+            new IconView("Fax", new FaxIcon(SIZE), "fax-icon"),
+            new IconView("Feedback", new FeedbackIcon(SIZE), "feedback-icon"),
+            new IconView("File Present", new FilePresentIcon(SIZE), "file-present-icon"),
+            new IconView("Filter Alt", new FilterAltIcon(SIZE), "filter-alt-icon"),
+
+            new IconView("Filter Alt Off", new FilterAltOffIcon(SIZE), "filter-alt-off-icon"),
+            new IconView("Find In Page", new FindInPageIcon(SIZE), "find-in-page-icon"),
+            new IconView("Find Replace", new FindReplaceIcon(SIZE), "find-replace-icon"),
+            new IconView("Fingerprint", new FingerprintIcon(SIZE), "fingerprint-icon"),
+            new IconView("Fit Screen", new FitScreenIcon(SIZE), "fit-screen-icon"),
+            new IconView("Flaky", new FlakyIcon(SIZE), "flaky-icon"),
+            new IconView("Flight Land", new FlightLandIcon(SIZE), "flight-land-icon"),
+            new IconView("Flight Take Off", new FlightTakeOffIcon(SIZE), "flight-take-off-icon"),
+            new IconView("Flip To Back", new FlipToBackIcon(SIZE), "flip-to-back-icon"),
+            new IconView("Flot To Front", new FlipToFrontIcon(SIZE), "flip-to-front-icon"),
+            new IconView("Flutter Dash", new FlutterDashIcon(SIZE), "flutter-dash-icon"),
+            new IconView("Free Cancellation", new FreeCancellationIcon(SIZE), "free-cancellation-icon"),
+            new IconView("Google Translate", new GoogleTranslateIcon(SIZE), "google-translate-icon"),
+            new IconView("Gavel", new GavelIcon(SIZE), "gavel-icon"),
+            new IconView("Generating Tokens", new GeneratingTokensIcon(SIZE), "generating-tokens"),
+            new IconView("Get App", new GetAppIcon(SIZE), "get-app-icon"),
+            new IconView("GIF", new GifIcon(SIZE), "gif-icon"),
+            new IconView("GIF Box", new GifBoxIcon(SIZE), "gif-box-icon"),
+            new IconView("Grade", new GradeIcon(SIZE), "grade-icon"),
+            new IconView("Grading", new GradingIcon(SIZE), "grading-icon"),
+            new IconView("Group Work", new GroupWorkIcon(SIZE), "group-work-icon"),
+            new IconView("Help", new HelpIcon(SIZE), "help-icon"),
+            new IconView("Help Center", new HelpCenterIcon(SIZE), "help-center-icon"),
+            new IconView("Help Outline", new HelpOutlineIcon(SIZE), "help-outline-icon"),
+            new IconView("Hide Source", new HideSourceIcon(SIZE), "hide-source-icon"),
+            new IconView("Highlight Alt", new HighlightAltIcon(SIZE), "highlight-alt-icon"),
+            new IconView("Highlight Off", new HighlightOffIcon(SIZE), "highlight-off-icon"),
+            new IconView("History", new HistoryIcon(SIZE), "history-icon"),
+            new IconView("History Toggle Off", new HistoryToggleOffIcon(SIZE), "history-toggle-off-icon"),
+            new IconView("HLS", new HlsIcon(SIZE), "hls-icon"),
+            new IconView("HLS Off", new HlsOffIcon(SIZE), "hls-off-icon"),
+            new IconView("Home", new HomeIcon(SIZE), "home-icon"),
+            new IconView("Horizontal Split", new HorizontalSplitIcon(SIZE), "horizontal-split-icon"),
+            new IconView("Hotel Class", new HotelClassIcon(SIZE), "hotel-class-icon"),
+            new IconView("Hourglass Disabled", new HourglassDisabledIcon(SIZE), "hourglass-disabled-icon"),
+            new IconView("Hourglass Empty", new HourglassEmptyIcon(SIZE), "hourglass-empty-icon"),
+            new IconView("Hourglass Full", new HourglassFullIcon(SIZE), "hourglass-full-icon"),
+            new IconView("HTML", new HtmlIcon(SIZE), "html-icon"),
+            new IconView("HTTP", new HttpIcon(SIZE), "http-icon"),
+            new IconView("HTTPS", new HttpsIcon(SIZE), "https-icon"),
+            new IconView("Important Devices", new ImportantDevicesIcon(SIZE), "important-devices-icon"),
+            new IconView("Info", new InfoIcon(SIZE), "info-icon"),
+            new IconView("Input", new InputIcon(SIZE), "input-icon"),
+            new IconView("Install Desktop", new InstallDesktopIcon(SIZE), "install-desktop-icon"),
+            new IconView("Install Mobile", new InstallMobileIcon(SIZE), "install-mobile-icon"),
+            new IconView("Integration Instructions", new IntegrationInstructionsIcon(SIZE), "integration-instructions-icon"),
+            new IconView("Invert Colors", new InvertColorsIcon(SIZE), "invert-colors-icon"),
+            new IconView("Javascript", new JavascriptIcon(SIZE), "javascript-icon"),
+            new IconView("Join Full", new JoinFullIcon(SIZE), "join-full-icon"),
+            new IconView("Join Inner", new JoinInnerIcon(SIZE), "join-inner-icon"),
+            new IconView("Join Left", new JoinLeftIcon(SIZE), "join-left-icon"),
+            new IconView("Join Right", new JoinRightIcon(SIZE), "join-right-icon"),
+            new IconView("Label", new LabelIcon(SIZE), "label-icon"),
+            new IconView("Label Off", new LabelOffIcon(SIZE), "label-off-icon"),
+            new IconView("Language", new LanguageIcon(SIZE), "language-icon"),
+            new IconView("Launch", new LaunchIcon(SIZE), "launch-icon"),
+            new IconView("Leaderboard", new LeaderboardIcon(SIZE), "leaderboard-icon"),
+            new IconView("Leak Add", new LeakAddIcon(SIZE), "leak-add-icon"),
+            new IconView("Leak Remove", new LeakRemoveIcon(SIZE), "leak-remove-icon"),
+            new IconView("Lightbulb", new LightbulbIcon(SIZE), "lightbulb-icon"),
+            new IconView("Lightbulb Cicle", new LightbulbCircleIcon(SIZE), "lightbulb-circle-icon"),
+            new IconView("Line Style", new LineStyleIcon(SIZE), "line-style-icon"),
+            new IconView("Line Weight", new LineWeightIcon(SIZE), "line-weight-icon"),
+            new IconView("List", new ListIcon(SIZE), "list-icon"),
+            new IconView("Lock", new LockIcon(SIZE), "lock-icon"),
+            new IconView("Lock Clock", new LockClockIcon(SIZE), "lock-clock-icon"),
+            new IconView("Lock Open", new LockOpenIcon(SIZE), "lock-open-icon"),
+            new IconView("Lock Person", new LockPersonIcon(SIZE), "lock-person-icon"),
+            new IconView("Lock Reset", new LockResetIcon(SIZE), "lock-reset-icon"),
+            new IconView("Login", new LoginIcon(SIZE), "login-icon"),
+            new IconView("Logout", new LogoutIcon(SIZE), "logout-icon"),
+            new IconView("Login2", new Login2Icon(SIZE), "login-2-icon"),
+            new IconView("Logout2", new Logout2Icon(SIZE), "logout-2-icon"),
+            new IconView("Loyalty", new LoyaltyIcon(SIZE), "loyalty-icon"),
+            new IconView("Manage Accounts", new ManageAccountsIcon(SIZE), "manage-accounts-icon"),
+            new IconView("Manage History", new ManageHistoryIcon(SIZE), "manage-history-icon"),
+            new IconView("Mark As Unread", new MarkAsUnreadIcon(SIZE), "mark-as-unread-icon"),
+            new IconView("Mark Unread Mailbox", new MarkUnreadMailboxIcon(SIZE), "mark-unread-mailbox-icon"),
+            new IconView("Mediation", new MediationIcon(SIZE), "mediation-icon"),
+            new IconView("Model Training", new ModelTrainingIcon(SIZE), "model-training-icon"),
+            new IconView("Motorcycle", new MotorcycleIcon(SIZE), "motorcycle-icon"),
+            new IconView("Network Ping", new NetworkPingIcon(SIZE), "network-ping-icon"),
+            new IconView("New Label", new NewLabelIcon(SIZE), "new-label-icon"),
+            new IconView("Next Plan", new NextPlanIcon(SIZE), "next-plan-icon"),
+            new IconView("Nightlight Round", new NightlightRoundIcon(SIZE), "nightlight-round-icon"),
+            new IconView("No Accounts", new NoAccountsIcon(SIZE), "no-accounts-icon"),
+            new IconView("Noise Aware", new NoiseAwareIcon(SIZE), "noise-aware-icon"),
+            new IconView("Noise Control Off", new NoiseControlOffIcon(SIZE), "noise-control-off-icon"),
+            new IconView("Not Accessible", new NotAccessibleIcon(SIZE), "not-accessible-icon"),
+            new IconView("Not Started", new NotStartedIcon(SIZE), "not-started-icon"),
+            new IconView("Note Add", new NoteAddIcon(SIZE), "note-add-icon"),
+            new IconView("Offline Bolt", new OfflineBoltIcon(SIZE), "offline-bolt-icon"),
+            new IconView("Offline Pin", new OfflinePinIcon(SIZE), "offline-pin-icon"),
+            new IconView("On Device Training", new OnDeviceTrainingIcon(SIZE), "on-device-training-icon"),
+            new IconView("Online Prediction", new OnlinePredictionIcon(SIZE), "online-prediction-icon"),
+            new IconView("Opacity", new OpacityIcon(SIZE), "opacity-icon"),
+            new IconView("Open In Browser", new OpenInBrowserIcon(SIZE), "open-in-browser-icon"),
+            new IconView("Open In Full", new OpenInFullIcon(SIZE), "open-in-full-icon"),
+            new IconView("Open In New", new OpenInNewIcon(SIZE), "open-in-new-icon"),
+            new IconView("Open In New Off", new OpenInNewOffIcon(SIZE), "open-in-new-off-icon"),
+            new IconView("Open With", new OpenWithIcon(SIZE), "open-with-icon"),
+            new IconView("OutBoundIcon", new OutBoundIcon(SIZE), "out-bound-icon"),
+            new IconView("Outbox", new OutboxIcon(SIZE), "outbox-icon"),
+            new IconView("Outlet", new OutletIcon(SIZE), "outlet-icon"),
+            new IconView("Output", new OutputIcon(SIZE), "output-icon"),
+            new IconView("Page View", new PageViewIcon(SIZE), "page-view-icon"),
+            new IconView("Paid", new PaidIcon(SIZE), "paid-icon"),
+            new IconView("Pan Tool", new PanToolIcon(SIZE), "pan-tool-icon"),
+            new IconView("Pan Tool Alt", new PanToolAltIcon(SIZE), "pan-tool-alt-icon"),
+            new IconView("Pending", new PendingIcon(SIZE), "pending-icon"),
+            new IconView("Pending Actions", new PendingActionsIcon(SIZE), "pending-actions-icon"),
+            new IconView("Percent", new PercentIcon(SIZE), "percent-icon"),
+            new IconView("Perm Camera Mic", new PermCameraMicIcon(SIZE), "perm-camera-mic-icon"),
+            new IconView("Perm Contact Calendar", new PermContactCalendarIcon(SIZE), "perm-contact-camera-icon"),
+            new IconView("Perm Data Setting", new PermDataSettingIcon(SIZE), "perm-data-setting-icon"),
+            new IconView("Perm Device Information", new PermDeviceInformationIcon(SIZE), "perm-device-information-icon"),
+            new IconView("Perm Identity", new PermIdentityIcon(SIZE), "perm-identity-icon"),
+            new IconView("Perm Media", new PermMediaIcon(SIZE), "perm-media-icon"),
+            new IconView("Perm Phone Msg", new PermPhoneMsgIcon(SIZE), "perm-phone-msg-icon"),
+            new IconView("Perm Scan Wifi", new PermScanWifiIcon(SIZE), "perm-scan-wifi-icon"),
+            new IconView("Pets", new PetsIcon(SIZE), "pets-icon"),
+            new IconView("PHP", new PhpIcon(SIZE), "php-icon"),
+            new IconView("Picture In Picture", new PictureInPictureIcon(SIZE), "picture-in-picture-icon"),
+            new IconView("Picture In Picture Alt", new PictureInPictureAltIcon(SIZE), "picture-in-picture-alt-icon"),
+            new IconView("Pin End", new PinEndIcon(SIZE), "pin-end-icon"),
+            new IconView("Pin Invoke", new PinInvokeIcon(SIZE), "pin-invoke-icon"),
+            new IconView("Pinch", new PinchIcon(SIZE), "pinch-icon"),
+            new IconView("Plagiarism", new PlagiarismIcon(SIZE), "plagiarism-icon"),
+            new IconView("Play For Work", new PlayForWorkIcon(SIZE), "play-for-work-icon"),
+            new IconView("Polymer", new PolymerIcon(SIZE), "polymer-icon"),
+            new IconView("Power Settings New", new PowerSettingsNewIcon(SIZE), "power-settings-new-icon"),
+            new IconView("Pregnant Woman", new PregnantWomanIcon(SIZE), "pregnant-woman-icon"),
+            new IconView("Preview", new PreviewIcon(SIZE), "preview-icon"),
+            new IconView("Print", new PrintIcon(SIZE), "print-icon"),
+            new IconView("Privacy Tip", new PrivacyTipIcon(SIZE), "privacy-tip-icon")
     ));
 
     // UI Actions Icons
@@ -311,17 +596,19 @@ public class MainTest extends Application {
             String search = tfSearch.getText();
             if (search.isEmpty()) {
                 // clear
+                actions.setPredicate(p -> true);
                 uiActions.setPredicate(p -> true);
             } else {
                 FilteredList<IconView> filteredList;
                 switch (tabPane.getSelectionModel().getSelectedIndex()) {
                     case 1:
+                        filteredList = uiActions;
+                        break;
                     case 2:
-                    case 3:
                         filteredList = null;
                         break;
                     default:
-                        filteredList = uiActions;
+                        filteredList = actions;
                 }
                 if (filteredList != null) {
                     filteredList.setPredicate(icon -> icon.label.getText().toLowerCase().contains(search.toLowerCase()));
@@ -341,6 +628,17 @@ public class MainTest extends Application {
         VBox vBox = new VBox();
         vBox.getChildren().addAll(toolbar, tabPane);
 
+        // Actions
+        FlowPane actionsGroup = new FlowPane();
+        actionsGroup.setHgap(8);
+        actionsGroup.setVgap(8);
+        actionsGroup.setPadding(new Insets(16));
+        Bindings.bindContent(actionsGroup.getChildren(), actions);
+        ScrollPane actionsScrollPane = new ScrollPane(actionsGroup);
+        actionsScrollPane.setFitToHeight(true);
+        actionsScrollPane.setFitToWidth(true);
+        tabPane.getTabs().get(0).setContent(actionsScrollPane);
+
         // UI Actions FlowPane
         FlowPane flowPane = new FlowPane();
         flowPane.setHgap(8);
@@ -351,9 +649,10 @@ public class MainTest extends Application {
         scrollPane.setFitToWidth(true);
         scrollPane.setFitToHeight(true);
         scrollPane.setContent(flowPane);
-        tabPane.getTabs().get(0).setContent(scrollPane);
+        tabPane.getTabs().get(1).setContent(scrollPane);
 
         Scene scene = new Scene(vBox, 600, 400);
+        scene.getStylesheets().add(MainTest.class.getResource("styles.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.setTitle("Material Icons");
         primaryStage.show();
@@ -374,8 +673,7 @@ public class MainTest extends Application {
             label.setTextAlignment(TextAlignment.CENTER);
             this.icon = icon;
 
-            setMinSize(100, 100);
-            setMaxSize(100, 100);
+            setPrefSize(120, 100);
             setAlignment(Pos.CENTER);
             setSpacing(8);
             setPadding(new Insets(8));

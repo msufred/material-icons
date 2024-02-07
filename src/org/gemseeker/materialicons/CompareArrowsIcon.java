@@ -1,22 +1,22 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class CompareArrowsIcon extends SVGIcon {
 
     public CompareArrowsIcon() {
-        super(DEFAULT_SIZE * 1.25, DEFAULT_SIZE);
+        super(DEFAULT_SIZE, DEFAULT_SIZE * 0.75);
     }
 
     public CompareArrowsIcon(double size) {
-        super(size * 1.25, size);
+        super(size, size * 0.75);
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("m317 896-42-42 121-121H80v-60h316L275 552l42-42 193 193-193 193Zm326-254L450 449l193-193 42 " +
-                "42-121 121h316v60H564l121 121-42 42Z");
+        path.setContent("M9.01 14H2v2h7.01v3L13 15l-3.99-4zm5.98-1v-3H22V8h-7.01V5L11 9z");
         return path;
     }
 

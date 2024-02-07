@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class ExtensionOffIcon extends SVGIcon {
 
@@ -13,12 +14,12 @@ public class ExtensionOffIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("m813 995-59-59H570q-5-48-35.5-77.5T463 829q-41 0-71.5 29.5T356 936H180q-24 " +
-                "0-42-18t-18-42V700q48-5 77.5-35.5T227 593q0-41-29.5-71.5T120 486V302l-59-59 43-43 752 " +
-                "752-43 43Zm-7-179L240 250h117q11-40 39.5-67t68.5-27q40 0 68.5 27t39.5 67h173q24 0 42 " +
-                "18t18 42v173q40 11 65.5 41.5T897 595q0 40-25.5 67T806 700v116Z");
+        path.setContent("m19.78 22.61l-1.63-1.63c-.05 0-.1.02-.15.02h-3.8c0-2.71-2.16-3-2.7-3s-2.7.29-2.7 " +
+                "3H5c-1.1 0-2-.9-2-2v-3.8c2.71 0 3-2.16 3-2.7s-.3-2.7-2.99-2.7V6c0-.05.02-.09.02-.14L1.39 " +
+                "4.22L2.8 2.81l18.38 18.38zm.22-5.44V15a2.5 2.5 0 0 0 0-5V6c0-1.1-.9-2-2-2h-4a2.5 2.5 0 0 " +
+                "0-5 0H6.83z");
         return path;
     }
 

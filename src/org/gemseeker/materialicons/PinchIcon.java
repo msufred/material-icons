@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class PinchIcon extends SVGIcon {
 
@@ -13,13 +14,13 @@ public class PinchIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M40 526V336h50v105l255-255H240v-50h190v190h-50V221L125 476h105v50H40Zm524 490q-17 " +
-                "0-32-6.5T506 992L324 799l32-33q11-11 25-13.5t29 .5l114 25V356q0-26 17-43t43-17q26 0 43 17t17 " +
-                "43v240h36q11 0 19 1.5t17 6.5l163 82q24 12 36 35t8 49l-26 180q-5 29-28 47.5t-52 18.5H564Zm-26-" +
-                "60h281l43-249-183-91h-55V396q0-18-11-29t-29-11q-18 0-29 11t-11 29v399l-154-33-23 23 171 171Zm0 " +
-                "0L367 785l23-23 154 33V396q0-18 11-29t29-11q18 0 29 11t11 29v220h55l183 91-43 249H538Z");
+        path.setContent("M6 2.5V1h5v5H9.5V3.56L3.56 9.5H6V11H1V6h1.5v2.44L8.44 " +
+                "2.5zm16.98 14.32l-.63 4.46c-.14.99-.99 1.72-1.98 1.72h-6.16c-." +
+                "53 0-1.29-.21-1.66-.59L8 17.62l.83-.84c.24-.24.58-.35.92-.28l3" +
+                ".25.74V6.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v6h.91c.31 0 .62" +
+                ".07.89.21l4.09 2.04c.77.39 1.21 1.22 1.09 2.07");
         return path;
     }
 

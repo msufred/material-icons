@@ -1,6 +1,7 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class ExpandIcon extends SVGIcon {
 
@@ -13,10 +14,9 @@ public class ExpandIcon extends SVGIcon {
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("M162 976v-60h636v60H162Zm320-90L330 734l43-43 79 79V382l-79 79-43-43 152-152 152 152-43 " +
-                "43-79-79v388l79-79 43 43-152 152ZM162 236v-60h636v60H162Z");
+        path.setContent("M4 20h16v2H4zM4 2h16v2H4zm9 7h3l-4-4l-4 4h3v6H8l4 4l4-4h-3z");
         return path;
     }
 

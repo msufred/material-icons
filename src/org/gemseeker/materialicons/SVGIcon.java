@@ -7,6 +7,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public abstract class SVGIcon extends Region {
 
@@ -31,6 +32,6 @@ public abstract class SVGIcon extends Region {
         setBackground(new Background(new BackgroundFill(Color.gray(0.25), CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
-    protected abstract SVGPath createShape();
+    protected abstract Shape createShape();
     protected abstract String getIconStyleClass();
 }

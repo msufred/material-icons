@@ -1,22 +1,22 @@
 package org.gemseeker.materialicons;
 
 import javafx.scene.shape.SVGPath;
+import javafx.scene.shape.Shape;
 
 public class DoneOutlineIcon extends SVGIcon {
 
     public DoneOutlineIcon() {
-        super(DEFAULT_SIZE * 1.35, DEFAULT_SIZE);
+        super(DEFAULT_SIZE, DEFAULT_SIZE * 0.8);
     }
 
     public DoneOutlineIcon(double size) {
-        super(size * 1.35, size);
+        super(size, size * 0.8);
     }
 
     @Override
-    protected SVGPath createShape() {
+    protected Shape createShape() {
         SVGPath path = new SVGPath();
-        path.setContent("m381 814 453-453-43-43-410 410-211-211-43 43 254 254Zm0 85L42 560l128-128 211 211 410-410 " +
-                "128 128-538 538Z");
+        path.setContent("m19.77 5.03l1.4 1.4L8.43 19.17l-5.6-5.6l1.4-1.4l4.2 4.2zm0-2.83L8.43 13.54l-4.2-4.2L0 13.57L8.43 22L24 6.43z");
         return path;
     }
 
